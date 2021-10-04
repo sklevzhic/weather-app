@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+body {
+  background: #f1f1f1;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+
+  .cities {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+
+    li {
+      cursor: pointer;
+      background: #ee7752;
+      padding: 5px;
+      margin-right: 5px;
+      border-radius: 3px;
+
+      &:hover {
+        background: #cc6c12;
+      }
+    }
+  }
+
+  .weather {
+    display: flex;
+
+    .weatherTodayTitle {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 10px;
+    }
+
+    .weatherToday {
+      text-align: center;
+      position: relative;
+
+
+      .activeCity {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      .temperature {
+        margin: 10px 0;
+        font-size: 2em;
+        font-weight: bold;
+
+      }
+      .description {
+        margin: 10px 0;
+      }
+      img {
+        width: 30%;
+      }
+    }
+    .weatherNextDays {
+        display: flex;
+        flex-direction: column;
+          img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+          }
+          .weatherMiniDay {
+            display: flex;
+            align-items: center;
+
+            .weatherMiniDayText {
+              display: flex;
+              flex-direction: column;
+              .miniCardTemperature {
+                font-size: 1.5em;
+              }
+              .miniCardDate {
+                font-size: 0.9em;
+
+              }
+              p {
+                margin: 0;
+              }
+            }
+          }
+    }
+    div {
+      flex-basis: 50%;
+    }
+  }
+}
+
