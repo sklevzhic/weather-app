@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
 body {
   background: #f1f1f1;
   font-family: 'Roboto', sans-serif;
@@ -33,14 +34,15 @@ body {
   .weather {
     display: flex;
 
-    .weatherTodayTitle {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin: 10px;
+    .weatherNextDays {
+      min-width: 48%;
     }
+
+
 
     .weatherToday {
       text-align: center;
+      min-width: 48%;
       position: relative;
 
 
@@ -49,50 +51,194 @@ body {
         font-weight: bold;
         margin: 10px 0;
       }
+
       .temperature {
         margin: 10px 0;
         font-size: 2em;
         font-weight: bold;
 
       }
+
       .description {
         margin: 10px 0;
       }
+
       img {
         width: 30%;
       }
     }
-    .weatherNextDays {
-        display: flex;
-        flex-direction: column;
-          img {
-            width: 50px;
-            height: 50px;
-            margin-right: 20px;
-          }
-          .weatherMiniDay {
-            display: flex;
-            align-items: center;
+  }
+}
 
-            .weatherMiniDayText {
-              display: flex;
-              flex-direction: column;
-              .miniCardTemperature {
-                font-size: 1.5em;
-              }
-              .miniCardDate {
-                font-size: 0.9em;
+.weatherMiniCardItems {
+  display: flex;
+  flex-direction: column;
 
-              }
-              p {
-                margin: 0;
-              }
-            }
-          }
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+
+  .weatherMiniDay {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .weatherMiniDayText {
+      display: flex;
+      flex-direction: column;
+
+      .miniCardTemperature {
+        font-size: 1.5em;
+      }
+
+      .miniCardDate {
+        font-size: 0.9em;
+
+      }
+
+      p {
+        margin: 0;
+      }
     }
-    div {
-      flex-basis: 50%;
-    }
+  }
+}
+
+.weatherMiniCardTenDays {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .weatherMiniDay {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+  }
+
+}
+.weatherTodayTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+.btn {
+  cursor: pointer;
+  background: #ee7752;
+  padding: 5px;
+  border-radius: 3px;
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+
+  &.disabled {
+    pointer-events:none;
+    background: #a1a1a1;
+    opacity: 0.7;
+  }
+}
+
+.inputCityForm {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  input {
+    padding: 5px;
+    margin-right: 20px;
+  }
+
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+
+.showbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5%;
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.loader::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 899, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100% {
+  }
+  0% {
+    stroke: red;
+  }
+  40% {
+    stroke: blue;
+  }
+  66% {
+    stroke: green;
+  }
+  80% {
+  }
+  90% {
+    stroke: yellow;
   }
 }
 
