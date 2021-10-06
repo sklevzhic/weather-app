@@ -5,5 +5,5 @@ interface TitleProps {
 }
 
 export const Title: React.FC<TitleProps> = ({days}) => {
-    return <p className={"weatherTodayTitle"}>Погода на {days}</p>;
+    return <p className={"weather__title"}>Погода на {days}</p>;
 };

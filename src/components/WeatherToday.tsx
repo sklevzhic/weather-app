@@ -7,12 +7,12 @@ interface WeatherTodayProps {
 }
 
 export const WeatherToday: React.FC<WeatherTodayProps> = ({weatherList}) => {
-    return             <div className={"weatherToday"}>
+    return             <div className={"weather-today"}>
         <Title days={"сегодня"}/>
-        <p className={"activeCity"}>{weatherList?.city_name}</p>
-        <p className={"temperature"}> {weatherList?.data[0].max_temp}°</p>
+        <p className={"weather__city-name"}>{weatherList?.city_name}</p>
+        <p className={"weather-today__temperature"}> {weatherList?.data[0].max_temp}°</p>
         <img src={`https://www.weatherbit.io/static/img/icons/${weatherList?.data[0].weather.icon}.png`}
              alt={`Погода на ${weatherList?.data[0].datetime}`}/>
-        <p className={"description"}>{weatherList?.data[0].weather.description}</p>
+        <p className={"weather-today__description"}>{weatherList?.data[0].weather.description}</p>
     </div>;
 };
