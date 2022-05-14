@@ -1,7 +1,7 @@
 import axios from "axios";
 import {WeatherData} from "../../models/WeatherData";
 
-const KEY = '97cdf86ac93c496ea212ca59e6ffb118'
+const KEY = '96f477dba027460fb37237c09f9e4a12'
 
 export default class WeatherService {
     static async getWeatherByCity(city = 'minsk', cnt = 4) {
